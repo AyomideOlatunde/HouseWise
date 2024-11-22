@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Insight Bootstrap Theme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A corporate Bootstrap theme by Medium Rare">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i%7cPermanent+Marker" rel="stylesheet">
+  <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+
+  <section class="row no-gutters p-0 height-100 align-items-initial">
+    <div class="col-lg d-lg-flex order-lg-2 height-30">
+      <img src="assets/img/header-17.jpg" alt="Image" class="bg-image">
+    </div>
+    <div class="col-lg-5 p-0 d-flex bg-white align-items-lg-center">
+      <div class="row no-gutters flex-fill justify-content-center">
+        <div class="col-11 col-md-8 col-lg-10 col-xl-9 py-4">
+          <h1 class="h2 text-center">Welcome. Begin prediction.</h1>
+          <form id="predictionForm" novalidate>
+            <fieldset>
+              <legend class="h5">Enter House Details</legend>
+
+              <div class="form-group">
+                <label for="city">City:</label>
+                <select id="city" class="form-control" onchange="updateArea()" required aria-describedby="cityHelp">
+                  <option value="" disabled selected>Select a city</option>
+                  <option value="jackson">Jackson</option>
+                  <option value="biloxi">Biloxi</option>
+                  <option value="greenwood">Greenwood</option>
+                  <option value="southaven">Southaven</option>
+                  <option value="gulfport">Gulfport</option>
+                  <option value="hattiesburg">Hattiesburg</option>
+                </select>
+                <small id="cityHelp" class="form-text text-muted">Choose the city for the house location.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="area">Area:</label>
+                <select id="area" class="form-control" required>
+                  <option value="" disabled selected>Select an area</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="zipcode">Zipcode:</label>
+                <input id="zipcode" type="text" class="form-control" placeholder="Enter the zipcode" required pattern="\\d{5}" aria-describedby="zipHelp">
+                <small id="zipHelp" class="form-text text-muted">Must be a 5-digit number.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="stories">Stories:</label>
+                <input id="stories" type="number" class="form-control" min="1" placeholder="How many stories?" required />
+              </div>
+
+              <div class="form-group">
+                <label for="beds">Beds:</label>
+                <input id="beds" type="number" class="form-control" min="1" step="0.5" placeholder="Number of beds" required />
+              </div>
+
+              <div class="form-group">
+                <label for="baths">Baths:</label>
+                <input id="baths" type="number" class="form-control" min="1" step="0.5" placeholder="Number of baths" required />
+              </div>
+
+              <div class="form-group">
+                <label for="lot-size">Lot size:</label>
+                <input id="lot-size" type="text" class="form-control" placeholder="Enter the lot size" required />
+              </div>
+
+              <div class="form-group">
+                <label for="year-built">Year Built:</label>
+                <input id="year-built" type="number" class="form-control" min="1800" max="2024" placeholder="Enter year" required />
+                <div id="yearError" class="text-danger mt-1" style="display:none;">Year Built cannot exceed the current year.</div>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-block btn-lg btn-primary" type="submit">Predict Price</button>
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/validation.js"></script>
+</body>
+
+</html>
